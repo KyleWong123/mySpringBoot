@@ -1,0 +1,8 @@
+该部分主要是spring boot 集成了spring data jpa
+  1. 主要是 entity中的四个注解：
+      @Entity
+      @Table
+      @Id
+      @Column
+   2. 主要是dao层集成了JpaRepository接口，该接口中定义了多个方法
+  
