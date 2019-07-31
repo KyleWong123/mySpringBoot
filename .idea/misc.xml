@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-config-jpa/pom.xml" />
       </list>
     </option>
   </component>
