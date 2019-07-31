@@ -101,8 +101,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spring-boot-config-jpa/src/main/java/com/example/demo/controller/AccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="36" column="35" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="35" />
+            <state relative-caret-position="525">
+              <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
               <folding>
                 <element signature="e#1817#1818#0" expanded="true" />
                 <element signature="e#1859#1860#0" expanded="true" />
@@ -202,7 +202,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="713" />
     <option name="width" value="734" />
     <option name="height" value="437" />
@@ -637,8 +637,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spring-boot-config-jpa/src/main/java/com/example/demo/controller/AccountController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="35" />
+        <state relative-caret-position="525">
+          <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding>
             <element signature="e#1817#1818#0" expanded="true" />
             <element signature="e#1859#1860#0" expanded="true" />
