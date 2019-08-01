@@ -1,0 +1,2 @@
+该部分主要集成了log4j以及mybatis的相关知识
+    注意：mapper.xml的书写以及sql语句的正确与否
