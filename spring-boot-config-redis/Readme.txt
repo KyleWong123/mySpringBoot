@@ -1,0 +1,1 @@
+该demo主要是对redis的练习，并将springboot与mybatis、redis进行了集成，实现了数据的缓存
