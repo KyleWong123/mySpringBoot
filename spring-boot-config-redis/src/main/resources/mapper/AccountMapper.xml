@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.AccountMapper">
+    <resultMap type="com.example.demo.entity.AccountEntity" id="accountResult">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="money" column="money"/>
+    </resultMap>
+
+    <select id="getAccount" parameterType="Integer" resultMap="accountResult">
+        select * from account where id=#{id}
+    </select>
+    <select id="listAccount" resultMap="accountResult">
+        SELECT *
+        FROM account a
+        <where>
+            <if test="name != null and name != '' ">
+                name = #{name}
+            </if>
+            <if test="money != null and money != ''">
+                and money = #{money}
+            </if>
+        </where>
+    </select>
+    <select id="listAccountByInfo" parameterType="com.example.demo.entity.AccountEntity" resultMap="accountResult">
+        SELECT *
+        FROM account a
+        <where>
+            <if test="accountEntity != null">
+            <if test="accountEntity.name != null and accountEntity.name != '' ">
+                name = #{accountEntity.name}
+            </if>
+            <if test="accountEntity.money != null and accountEntity.money != ''">
+                and money = #{accountEntity.money}
+            </if>
+            </if>
+        </where>
+    </select>
+    <insert id="saveAccount" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.demo.entity.AccountEntity">
+        INSERT INTO account
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name!= null">
+                name,
+            </if>
+            <if test="money!=null">
+                money,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name!=null">
+                #{name},
+            </if>
+            <if test="money!=null">
+                #{money},
+            </if>
+        </trim>
+    </insert>
+    <delete id="deleteAccount">
+        DELETE FROM account
+        WHERE
+           id = #{id}
+    </delete>
+</mapper>
