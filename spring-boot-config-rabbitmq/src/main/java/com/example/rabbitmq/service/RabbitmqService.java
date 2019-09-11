@@ -1,6 +1,7 @@
 package com.example.rabbitmq.service;
 
 import com.example.rabbitmq.entity.AccountEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author

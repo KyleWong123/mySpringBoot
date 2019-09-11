@@ -42,7 +42,7 @@ public class RabbitmqServiceImpl implements RabbitmqService, RabbitTemplate.Conf
     @Override
     public boolean sendAccount(AccountEntity accountEntity) {
         log.info("发送的account为{}", accountEntity);
-       // rabbitTemplate.setConfirmCallback(this);
+        rabbitTemplate.setConfirmCallback(this);
         rabbitTemplate.convertAndSend(accountRouting, accountEntity);
         return true;
     }

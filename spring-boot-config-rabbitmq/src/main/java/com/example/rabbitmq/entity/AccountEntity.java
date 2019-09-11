@@ -1,12 +1,16 @@
 package com.example.rabbitmq.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+
 import java.io.Serializable;
 
 /**
  * @author
  */
-
+@Configurable
 public class AccountEntity implements Serializable{
+    @Autowired
     private static final long serialVersionUID = 4938771119652125114L;
     private int id;
     private String name;
