@@ -7,12 +7,13 @@ package com.example.demo.mapper;
 import com.example.demo.entity.AccountEntity;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.executor.Executor;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
-@Repository
-@Mapper
+@Component
+// @Mapper
 public interface AccountMapper {
     /***
      * 根据id查询账户信息
@@ -30,7 +31,9 @@ public interface AccountMapper {
     List<AccountEntity> listAccount(@Param("name") String name, @Param("money") Double money);
 
     /**
+     *
      * 保存账户
+     *
      * @param accountEntity 要保存的账户信息
      * @return
      */

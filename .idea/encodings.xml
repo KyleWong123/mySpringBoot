@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="jar://C:/java/src.zip!/java/lang/annotation/Retention.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/annotation" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/helloworld" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rabbitmq-demo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-config-jpa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-config-mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-config-rabbitmq" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-config-redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test" charset="UTF-8" />
   </component>
 </project>

@@ -14,6 +14,7 @@ import java.util.concurrent.TimeoutException;
 @Slf4j
 public class Send {
     private static final String QUEUE_NAME = "test_work_queue";
+
     public static void main(String[] args) throws IOException, TimeoutException, InterruptedException {
         log.info("获取rabbitmq服务连接");
         Connection connection = ConnectionUtil.getConnection();

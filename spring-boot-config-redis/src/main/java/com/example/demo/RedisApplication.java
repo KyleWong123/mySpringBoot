@@ -4,45 +4,40 @@ package com.example.demo;
  * @author
  */
 
+import org.aspectj.apache.bcel.Repository;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.Bean;
-import org.springframework.data.redis.cache.RedisCacheConfiguration;
-import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.cache.RedisCacheWriter;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.data.redis.listener.RedisMessageListenerContainer;
-import org.springframework.data.redis.listener.Topic;
-import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
-import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.time.Duration;
 
 @SpringBootApplication
 // 驱动spring缓存机制
 @EnableCaching
-@MapperScan(basePackages = "com.example.demo.mapper", annotationClass = Repository.class)
+//@ComponentScan(value = {"com.example.demo.mapper"})
+@MapperScan(basePackages = {"com.example.demo.mapper"})
 public class RedisApplication {
+
 
     /***
      *
      */
     @Autowired
-    private RedisTemplate redisTemplate = null;
+    private RedisTemplate redisTemplate;
     @Autowired
-    private RedisConnectionFactory redisConnectionFactory  = null;
+    private RedisConnectionFactory redisConnectionFactory;
     @Autowired
-    private MessageListener messageListener = null;
+    private MessageListener messageListener;
     private ThreadPoolTaskScheduler threadPoolTaskScheduler = null;
     private RedisMessageListenerContainer redisMessageListenerContainer = null;
 
@@ -66,7 +61,7 @@ public class RedisApplication {
      * 创建redis连接池，运行等待处理的redis消息
      * @return
      */
-    @Bean
+   /* @Bean
     public ThreadPoolTaskScheduler initThreadPool(){
         if (threadPoolTaskScheduler != null) {
             return threadPoolTaskScheduler;
@@ -74,13 +69,13 @@ public class RedisApplication {
         threadPoolTaskScheduler = new ThreadPoolTaskScheduler();
         threadPoolTaskScheduler.setPoolSize(20);
         return threadPoolTaskScheduler;
-    }
+    }*/
 
     /***
      * 创建redis的消息监听器
      * @return
      */
-    @Bean
+/*    @Bean
     public RedisMessageListenerContainer initMessageContainer(){
         redisMessageListenerContainer = new RedisMessageListenerContainer();
         // redis连接工厂
@@ -94,9 +89,9 @@ public class RedisApplication {
         redisMessageListenerContainer.addMessageListener(messageListener, channel);
         redisMessageListenerContainer.addMessageListener(messageListener, channel2);
         return redisMessageListenerContainer;
-    }
+    }*/
 
-    @Bean(name = "redisCacheManager")
+    /*@Bean(name = "redisCacheManager")
     public RedisCacheManager initRedisCacheManager(){
         // Redis加锁写入器
         RedisCacheWriter writer = RedisCacheWriter.lockingRedisCacheWriter(redisConnectionFactory);
@@ -111,7 +106,7 @@ public class RedisApplication {
         // 创建redis缓存管理器
         RedisCacheManager redisCacheManager = new RedisCacheManager(writer, configuration);
         return redisCacheManager;
-    }
+    }*/
     public static void main(String[] args) {
         SpringApplication.run(RedisApplication.class, args);
     }

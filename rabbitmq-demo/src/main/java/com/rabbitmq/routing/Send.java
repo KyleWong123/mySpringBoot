@@ -14,6 +14,7 @@ import java.util.concurrent.TimeoutException;
 @Slf4j
 public class Send {
     private static final String EXCHANGE_NAME = "test_exchange_direct";
+
     public static void main(String[] args) throws IOException, TimeoutException {
         log.info("连接rabbitmq服务器");
         Connection connection = ConnectionUtil.getConnection();

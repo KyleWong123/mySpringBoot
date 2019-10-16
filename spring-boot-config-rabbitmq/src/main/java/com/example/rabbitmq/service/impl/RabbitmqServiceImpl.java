@@ -3,6 +3,7 @@ package com.example.rabbitmq.service.impl;
 /**
  * @author
  */
+
 import com.example.rabbitmq.entity.AccountEntity;
 import com.example.rabbitmq.service.RabbitmqService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,7 @@ public class RabbitmqServiceImpl implements RabbitmqService, RabbitTemplate.Conf
 
     /**
      * 发送消息
+     *
      * @param msg
      */
     @Override
@@ -35,8 +37,17 @@ public class RabbitmqServiceImpl implements RabbitmqService, RabbitTemplate.Conf
         return true;
     }
 
+
+    @Override
+    public boolean sendByFanout(String msg){
+        log.info("以分发模式发送");
+        rabbitTemplate.convertAndSend("fanout", "", msg);
+        return true;
+    }
+
     /**
      * 发送用户对象
+     *
      * @param accountEntity
      */
     @Override

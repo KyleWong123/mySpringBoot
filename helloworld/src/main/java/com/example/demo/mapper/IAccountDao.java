@@ -6,8 +6,12 @@ import java.util.List;
 
 public interface IAccountDao {
     int add(AccountEntity accountEntity);
+
     int update(AccountEntity accountEntity);
+
     int delete(int id);
+
     AccountEntity findById(int id);
+
     List<AccountEntity> findAllList();
 }

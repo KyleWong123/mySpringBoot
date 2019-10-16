@@ -13,6 +13,7 @@ import java.util.concurrent.TimeoutException;
 @Slf4j
 public class Recive1 {
     private static final String QUEUE_NAME = "test_work_queue";
+
     public static void main(String[] args) throws IOException, TimeoutException {
         // 获取连接
         log.info("获取rabbitmq服务器");
@@ -36,6 +37,7 @@ public class Recive1 {
             }
         };
         // 关闭自动应答
-        channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> { });
+        channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> {
+        });
     }
 }

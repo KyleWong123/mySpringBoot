@@ -2,6 +2,7 @@ package com.example.rabbitmq.receiver;
 
 import com.example.rabbitmq.entity.AccountEntity;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +13,12 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class RabbitmqReceiver {
     @RabbitListener(queues = {"${rabbitmq.queue.msg}"})
-    public void receiveMsg(String msg){
+    public void receiveMsg(Message msg) {
         log.info("接收到的msg为{}", msg);
+        byte[] bytes = msg.getBody();
+        System.out.println(bytes);
+        System.out.println( msg.getMessageProperties());
+
     }
 
     @RabbitListener(queues = {"${rabbitmq.queue.account}"})

@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.entity.AccountEntity;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.cache.annotation.CachePut;
 
 import java.util.List;
 
@@ -30,7 +31,7 @@ public interface AccountService {
      * @param accountEntity
      * @return
      */
-    int saveAccount(AccountEntity accountEntity);
+    AccountEntity saveAccount(AccountEntity accountEntity);
 
     /***
      * Service接口删除账户信息
@@ -38,11 +39,16 @@ public interface AccountService {
      * @return
      */
     int deleteAccount(Integer id);
+
     /***
      * Service接口根据条件查询信息
      * @param accountEntity
      * @return
      */
     List<AccountEntity> listAccountByInfo(AccountEntity accountEntity);
+
+    AccountEntity saveToRedis(AccountEntity accountEntity);
+
+    AccountEntity getFromRedis(Integer id);
 
 }

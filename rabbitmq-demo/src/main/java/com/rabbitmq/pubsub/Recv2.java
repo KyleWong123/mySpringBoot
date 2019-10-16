@@ -16,6 +16,7 @@ import java.util.concurrent.TimeoutException;
 public class Recv2 {
     private static final String QUEUE_NAME = "test_queue_fanout_message";
     private static final String EXCHANGE_NAME = "test_exchange_fanout";
+
     public static void main(String[] args) throws IOException, TimeoutException {
         log.info("连接rabbitmq服务器");
         Connection connection = ConnectionUtil.getConnection();
@@ -30,6 +31,7 @@ public class Recv2 {
             log.info(" [2] Received '" + message + "'");
             log.info("done");
         };
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> { });
+        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
+        });
     }
 }

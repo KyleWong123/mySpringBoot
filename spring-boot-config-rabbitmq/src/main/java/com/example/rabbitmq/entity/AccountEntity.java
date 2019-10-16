@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author
  */
 @Configurable
-public class AccountEntity implements Serializable{
+public class AccountEntity implements Serializable {
     @Autowired
     private static final long serialVersionUID = 4938771119652125114L;
     private int id;

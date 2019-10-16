@@ -12,37 +12,39 @@ import java.util.List;
 public class AccountController {
     @Autowired
     private IAccountService iAccountService;
-    @RequestMapping(value = "/getaccounts",method = RequestMethod.GET)
+
+    @RequestMapping(value = "/getaccounts", method = RequestMethod.GET)
     public List<AccountEntity> getAccounts() {
         return iAccountService.findAllList();
     }
+
     @GetMapping("/getbyid/{id}")
     public AccountEntity getById(@PathVariable("id") int id) {
         return iAccountService.findById(id);
     }
 
     @PostMapping("/setaccount/{id}")
-    public String setAccount(@PathVariable("id") int id,@RequestParam(value = "name") String name) {
+    public String setAccount(@PathVariable("id") int id, @RequestParam(value = "name") String name) {
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setId(id);
         accountEntity.setName(name);
         AccountEntity accountEntity1 = iAccountService.update(accountEntity);
-        if(accountEntity1!=null){
+        if (accountEntity1 != null) {
             return "success";
-        }else {
+        } else {
             return "false";
         }
     }
 
     @PostMapping(value = "/addcount")
-    public String addCount(@RequestParam(value = "name") String name,@RequestParam(value = "money") double money) {
+    public String addCount(@RequestParam(value = "name") String name, @RequestParam(value = "money") double money) {
         AccountEntity accountEntity = new AccountEntity();
         accountEntity.setName(name);
         accountEntity.setMoney(money);
         AccountEntity accountEntity1 = iAccountService.add(accountEntity);
-        if(accountEntity1!=null) {
+        if (accountEntity1 != null) {
             return "success";
-        }else {
+        } else {
             return "false";
         }
     }

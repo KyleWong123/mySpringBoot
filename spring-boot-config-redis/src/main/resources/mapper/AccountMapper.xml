@@ -8,9 +8,14 @@
         <result property="money" column="money"/>
     </resultMap>
 
-    <select id="getAccount" parameterType="Integer" resultMap="accountResult">
-        select * from account where id=#{id}
+    <!--<select id="getAccount" parameterType="Integer" resultType="com.example.demo.entity.AccountEntity">
+        select a_id as id, a_name as name, a_money as money from account where a_id=#{id}
+    </select>-->
+
+    <select id="getAccount" parameterType="int" resultType="com.example.demo.entity.AccountEntity">
+        select id, name, money from account where id=#{id}
     </select>
+
     <select id="listAccount" resultMap="accountResult">
         SELECT *
         FROM account a
@@ -28,16 +33,17 @@
         FROM account a
         <where>
             <if test="accountEntity != null">
-            <if test="accountEntity.name != null and accountEntity.name != '' ">
-                name = #{accountEntity.name}
-            </if>
-            <if test="accountEntity.money != null and accountEntity.money != ''">
-                and money = #{accountEntity.money}
-            </if>
+                <if test="accountEntity.name != null and accountEntity.name != '' ">
+                    name = #{accountEntity.name}
+                </if>
+                <if test="accountEntity.money != null and accountEntity.money != ''">
+                    and money = #{accountEntity.money}
+                </if>
             </if>
         </where>
     </select>
-    <insert id="saveAccount" useGeneratedKeys="true" keyProperty="id" parameterType="com.example.demo.entity.AccountEntity">
+    <insert id="saveAccount" useGeneratedKeys="true" keyProperty="id"
+            parameterType="com.example.demo.entity.AccountEntity">
         INSERT INTO account
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="name!= null">
@@ -59,6 +65,6 @@
     <delete id="deleteAccount">
         DELETE FROM account
         WHERE
-           id = #{id}
+        id = #{id}
     </delete>
 </mapper>

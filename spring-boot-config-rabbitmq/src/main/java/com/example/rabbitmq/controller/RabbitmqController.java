@@ -5,6 +5,7 @@ import com.example.rabbitmq.service.RabbitmqService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,15 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/rabbitmq")
 public class RabbitmqController {
     @Autowired
-    private RabbitmqService rabbitmqService = null;
+    private RabbitmqService rabbitmqService;
 
     /**
      * 发送消息控制层
+     *
      * @param msg
      * @return
      */
     @GetMapping("/sendmsg")
-    public String sendMsg(String msg){
+    public String sendMsg(String msg) {
         boolean bool = rabbitmqService.sendMsg(msg);
         if (bool) {
             log.info("消息发送成功");
@@ -32,18 +34,37 @@ public class RabbitmqController {
         } else {
             log.info("消息发送失败");
             return "failed";
+
         }
     }
 
-    /***
+    /**
+     * 发布订阅模式控制层
      *
+     * @param msg
+     * @return
+     */
+    @GetMapping("/sendbyfanout/{msg}")
+    public String sendByFanout(@PathVariable String msg) {
+        boolean bool = rabbitmqService.sendByFanout(msg);
+        if (bool) {
+            log.info("消息发送成功");
+            return "success";
+        } else {
+            log.info("消息发送失败");
+            return "failed";
+
+        }
+    }
+
+    /**
      * @param id
      * @param name
      * @param money
      * @return
      */
     @GetMapping("/sendaccount")
-    public String sendAccount(Integer id, String name, Double money){
+    public String sendAccount(Integer id, String name, Double money) {
         AccountEntity accountEntity = new AccountEntity(id, name, money);
         boolean bool = rabbitmqService.sendAccount(accountEntity);
         if (bool) {

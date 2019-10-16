@@ -10,16 +10,17 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * @author 20190301511
- *                                 *******       *******
- *   *******        *******  ------*  MQ * ------*  C  *
- *   *  P  * ------ *  X  *        *******       *******
- *   *******        *******  ------*******       *******
- *                                 *  MQ * ------*  C  *
- *                                 *******       *******
+ * *******       *******
+ * *******        *******  ------*  MQ * ------*  C  *
+ * *  P  * ------ *  X  *        *******       *******
+ * *******        *******  ------*******       *******
+ * *  MQ * ------*  C  *
+ * *******       *******
  */
 @Slf4j
 public class Send {
     private static final String EXCHANGE_NAME = "test_exchange_fanout";
+
     public static void main(String[] args) throws IOException, TimeoutException {
         log.info("连接rabbitmq服务器");
         Connection connection = ConnectionUtil.getConnection();
@@ -29,8 +30,10 @@ public class Send {
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
         log.info("发送消息");
         String msg = "hello ps";
-        channel.basicPublish(EXCHANGE_NAME, "", null, msg.getBytes());
-        log.info("消息发送成功 ", msg);
+        for (int i = 0; i <2 ; i++) {
+            channel.basicPublish(EXCHANGE_NAME, "", null, msg.getBytes());
+            log.info("消息发送成功 ", msg);
+        }
         channel.close();
         connection.close();
     }

@@ -3,6 +3,7 @@ package com.rabbitmq.routing;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.DeliverCallback;
+import com.rabbitmq.client.Envelope;
 import com.rabbitmq.util.ConnectionUtil;
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,6 +36,7 @@ public class Recv1 {
             log.info(" [1] Received '" + message + "'");
             log.info("done");
         };
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> { });
+        channel.basicConsume(QUEUE_NAME, false, deliverCallback, consumerTag -> {
+        });
     }
 }

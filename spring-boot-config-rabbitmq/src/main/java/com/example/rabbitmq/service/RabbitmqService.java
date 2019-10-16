@@ -9,12 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 public interface RabbitmqService {
     /**
      * 发送消息
+     *
      * @param msg
      */
     boolean sendMsg(String msg);
 
+    boolean sendByFanout(String msg);
     /**
      * 发送用户对象
+     *
      * @param accountEntity
      */
     boolean sendAccount(AccountEntity accountEntity);

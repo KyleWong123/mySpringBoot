@@ -1,0 +1,95 @@
+2019-10-12 11:22:57.999 [main] INFO  com.example.demo.RedisApplication - Starting RedisApplication on XA-20190301511 with PID 13220 (D:\mySpringBoot\spring-boot-config-redis\target\classes started by 20190301511 in D:\mySpringBoot)
+2019-10-12 11:22:58.043 [main] INFO  com.example.demo.RedisApplication - No active profile set, falling back to default profiles: default
+2019-10-12 11:22:59.933 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-12 11:22:59.947 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-12 11:23:00.069 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 95ms. Found 0 repository interfaces.
+2019-10-12 11:23:00.667 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f20ce24e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-12 11:23:00.753 [main] INFO  o.s.w.s.a.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2019-10-12 11:23:00.785 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4d751d4f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-12 11:23:01.614 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8096 (http)
+2019-10-12 11:23:01.633 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8096"]
+2019-10-12 11:23:01.649 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-12 11:23:01.649 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-12 11:23:01.676 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2019-10-12 11:23:01.677 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-10-12 11:23:01.677 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-10-12 11:23:01.677 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-10-12 11:23:01.748 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-10-12 11:23:01.937 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-12 11:23:01.937 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3702 ms
+2019-10-12 11:23:03.825 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-12 11:23:04.652 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-12 11:23:04.731 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8096"]
+2019-10-12 11:23:04.772 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8096 (http) with context path ''
+2019-10-12 11:23:04.776 [main] INFO  com.example.demo.RedisApplication - Started RedisApplication in 10.282 seconds (JVM running for 12.385)
+2019-10-12 11:23:05.274 [RMI TCP Connection(3)-192.168.60.105] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-12 11:23:05.274 [RMI TCP Connection(3)-192.168.60.105] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-10-12 11:23:05.310 [RMI TCP Connection(1)-192.168.60.105] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-12 11:23:05.319 [RMI TCP Connection(3)-192.168.60.105] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 45 ms
+2019-10-12 11:23:07.900 [RMI TCP Connection(1)-192.168.60.105] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-12 11:24:14.892 [main] INFO  com.example.demo.RedisApplication - Starting RedisApplication on XA-20190301511 with PID 13276 (D:\mySpringBoot\spring-boot-config-redis\target\classes started by 20190301511 in D:\mySpringBoot)
+2019-10-12 11:24:14.893 [main] INFO  com.example.demo.RedisApplication - No active profile set, falling back to default profiles: default
+2019-10-12 11:24:15.791 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-12 11:24:15.793 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-12 11:24:15.820 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9ms. Found 0 repository interfaces.
+2019-10-12 11:24:16.108 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$5b0670a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-12 11:24:16.133 [main] INFO  o.s.w.s.a.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2019-10-12 11:24:16.163 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b66eaba8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-12 11:24:16.416 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8096 (http)
+2019-10-12 11:24:16.431 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8096"]
+2019-10-12 11:24:16.438 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-12 11:24:16.438 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-12 11:24:16.444 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2019-10-12 11:24:16.445 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-10-12 11:24:16.445 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-10-12 11:24:16.445 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-10-12 11:24:16.448 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-10-12 11:24:16.569 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-12 11:24:16.569 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1638 ms
+2019-10-12 11:24:17.469 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-12 11:24:18.012 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-12 11:24:18.068 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8096"]
+2019-10-12 11:24:18.086 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8096 (http) with context path ''
+2019-10-12 11:24:18.088 [main] INFO  com.example.demo.RedisApplication - Started RedisApplication in 3.717 seconds (JVM running for 4.81)
+2019-10-12 11:24:18.537 [RMI TCP Connection(3)-192.168.60.105] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-12 11:24:18.537 [RMI TCP Connection(3)-192.168.60.105] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-10-12 11:24:18.541 [RMI TCP Connection(4)-192.168.60.105] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-12 11:24:18.546 [RMI TCP Connection(3)-192.168.60.105] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2019-10-12 11:24:18.711 [RMI TCP Connection(4)-192.168.60.105] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-12 11:26:27.847 [http-nio-8096-exec-1] INFO  com.example.demo.service.impl.AccountServiceImpl - 根据指定条件查询账户的信息
+2019-10-12 11:26:30.712 [http-nio-8096-exec-1] INFO  com.example.demo.service.impl.AccountServiceImpl - 查出的账户信息有AccountEntity{id=4, name='P', money=502.0}
+2019-10-12 11:29:51.635 [main] INFO  com.example.demo.RedisApplication - Starting RedisApplication on XA-20190301511 with PID 8636 (D:\mySpringBoot\spring-boot-config-redis\target\classes started by 20190301511 in D:\mySpringBoot)
+2019-10-12 11:29:51.636 [main] INFO  com.example.demo.RedisApplication - No active profile set, falling back to default profiles: default
+2019-10-12 11:29:52.818 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-10-12 11:29:52.821 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-10-12 11:29:52.853 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 10ms. Found 0 repository interfaces.
+2019-10-12 11:29:53.135 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$43f93618] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-12 11:29:53.163 [main] INFO  o.s.w.s.a.server.AnnotationActionEndpointMapping - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2019-10-12 11:29:53.211 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9f617119] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-12 11:29:53.700 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8096 (http)
+2019-10-12 11:29:53.793 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8096"]
+2019-10-12 11:29:53.837 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-12 11:29:53.837 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-12 11:29:53.937 [main] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2019-10-12 11:29:53.937 [main] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2019-10-12 11:29:53.937 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-10-12 11:29:53.937 [main] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-10-12 11:29:53.973 [main] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2019-10-12 11:29:54.200 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-12 11:29:54.200 [main] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2527 ms
+2019-10-12 11:29:55.066 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-12 11:29:55.590 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-12 11:29:55.651 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8096"]
+2019-10-12 11:29:55.688 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8096 (http) with context path ''
+2019-10-12 11:29:55.690 [main] INFO  com.example.demo.RedisApplication - Started RedisApplication in 4.749 seconds (JVM running for 5.991)
+2019-10-12 11:29:56.071 [RMI TCP Connection(4)-192.168.60.105] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-12 11:29:56.074 [RMI TCP Connection(3)-192.168.60.105] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-12 11:29:56.074 [RMI TCP Connection(3)-192.168.60.105] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2019-10-12 11:29:56.081 [RMI TCP Connection(3)-192.168.60.105] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2019-10-12 11:29:56.390 [RMI TCP Connection(4)-192.168.60.105] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-12 11:30:08.533 [http-nio-8096-exec-1] INFO  com.example.demo.service.impl.AccountServiceImpl - 根据指定条件查询账户的信息
+2019-10-12 11:30:08.723 [http-nio-8096-exec-1] INFO  com.example.demo.service.impl.AccountServiceImpl - 查出的账户信息有AccountEntity{id=4, name='P', money=502.0}
+2019-10-12 11:30:33.363 [http-nio-8096-exec-4] INFO  com.example.demo.service.impl.AccountServiceImpl - 根据指定条件查询账户的信息
+2019-10-12 11:30:33.469 [http-nio-8096-exec-4] INFO  com.example.demo.service.impl.AccountServiceImpl - 查出的账户信息有{}
+2019-10-12 11:31:03.954 [http-nio-8096-exec-7] INFO  com.example.demo.service.impl.AccountServiceImpl - 根据指定条件查询账户的信息
+2019-10-12 11:31:03.957 [http-nio-8096-exec-7] INFO  com.example.demo.service.impl.AccountServiceImpl - 查出的账户信息有{}

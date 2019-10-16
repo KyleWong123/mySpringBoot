@@ -8,11 +8,13 @@ import java.util.concurrent.TimeoutException;
 
 /**
  * 获取MQ连接的工具类
+ *
  * @author 20190301511
  */
 public class ConnectionUtil {
     /**
      * 获取MQ连接方法
+     *
      * @return
      */
     public static Connection getConnection() throws IOException, TimeoutException {

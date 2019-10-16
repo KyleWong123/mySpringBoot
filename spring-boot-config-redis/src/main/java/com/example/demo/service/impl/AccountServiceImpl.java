@@ -17,29 +17,40 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
 public class AccountServiceImpl implements AccountService {
     @Autowired
-    private AccountMapper accountMapper = null;
+    private AccountMapper accountMapper;
     private List<AccountEntity> accountEntityList = null;
     private AccountEntity accountEntity = null;
     @Autowired
     private RedisTemplate redisTemplate = null;
+
+
     @Override
-    // @Cacheable(value = "redisCache", key = "'redis_account_' + #id")
+    //@Cacheable(value = "redisCache", key = "'redis_account_' + #id")
     public AccountEntity getAccount(Integer id) {
         accountEntity = new AccountEntity();
-        log.info("传入的id为{}",id);
+        log.info("传入的id为{}", id);
         accountEntity = accountMapper.getAccount(id);
+        /*Map map = new HashMap(2);
+        map.put("id", accountEntity.getId());
+        map.put("name", accountEntity.getName());
+        map.put("money", accountEntity.getMoney());
+        redisTemplate.opsForHash().putAll("redis_account"+id, map);
+        Map map1 = redisTemplate.boundHashOps("redis_account"+id).entries();
+        System.out.println(map1);*/
         String json = JSON.toJSONString(accountEntity);
-        log.info("查找出的账户信息为{}",json);
+        log.info("查找出的账户信息为{}", json);
         // 将获取的数据或存到redis数据库
         log.info("实现数据缓存到redis数据库");
         ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
-        valueOperations.set("redis_account"+id, json);
+        valueOperations.set("redis:account:info:" + id, json);
         if (accountEntity == null) {
             return null;
         }
@@ -50,7 +61,7 @@ public class AccountServiceImpl implements AccountService {
     public List<AccountEntity> listAccount(String name, Double money) {
         log.info("根据条件查询账户的信息");
         accountEntityList = accountMapper.listAccount(name, money);
-        log.info("查出的账户信息有{}",accountEntityList.toArray());
+        log.info("查出的账户信息有{}", accountEntityList.toArray());
         if (accountEntityList == null) {
             return null;
         }
@@ -58,20 +69,20 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    @ResponseBody
-    // @CachePut(value = "redisCache", key = "'redis_account_'")
-    public int saveAccount(AccountEntity accountEntity) {
+    // @ResponseBody
+    //@CachePut(value = "redisCache", key = "'redis_account_'+ #accountEntity.id")
+    public AccountEntity saveAccount(AccountEntity accountEntity) {
         int count = accountMapper.saveAccount(accountEntity);
         String json = JSON.toJSONString(accountEntity);
         log.info("{}", json);
         log.info("保存的用户信息为{}", accountEntity);
         log.info("实现数据缓存到redis数据库");
         ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
-        valueOperations.set("redis_account"+accountEntity.getId(), json);
+        valueOperations.set("redis:account:add:" + accountEntity.getId(), json);
         if (count != 0) {
-            return 1;
+            return accountEntity;
         }
-        return 0;
+        return null;
     }
 
     @Override
@@ -82,7 +93,7 @@ public class AccountServiceImpl implements AccountService {
             return 0;
         }
         log.info("从redis数据库中清除缓存");
-        Boolean aBoolean = redisTemplate.delete("redis_account"+id);
+        Boolean aBoolean = redisTemplate.delete("redis_account" + id);
         return 1;
     }
 
@@ -90,10 +101,26 @@ public class AccountServiceImpl implements AccountService {
     public List<AccountEntity> listAccountByInfo(AccountEntity accountEntity) {
         log.info("根据指定条件查询账户的信息");
         accountEntityList = accountMapper.listAccountByInfo(accountEntity);
-        log.info("查出的账户信息有{}",accountEntityList.toArray());
+        log.info("查出的账户信息有{}", accountEntityList.toArray());
         if (accountEntityList == null) {
             return null;
         }
         return accountEntityList;
+    }
+
+    @Override
+    @CachePut(value = "redis", key = "'redis_account_'+ #accountEntity.id")
+    public AccountEntity saveToRedis(AccountEntity accountEntity) {
+        int count = accountMapper.saveAccount(accountEntity);
+        if (count != 0) {
+            return accountEntity;
+        }
+        return null;
+    }
+
+    @Override
+    @Cacheable(value = "redis", key = "'redis_account_' + #id")
+    public AccountEntity getFromRedis(Integer id) {
+        return new AccountEntity();
     }
 }

@@ -6,7 +6,7 @@ import java.io.Serializable;
  * @author
  */
 
-public class AccountEntity implements Serializable{
+public class AccountEntity implements Serializable {
     private static final long serialVersionUID = -4795500090218131263L;
     private int id;
     private String name;

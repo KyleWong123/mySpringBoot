@@ -32,6 +32,7 @@ public class RedisConfig {
         this.connectionFactory = connectionFactory;
         return connectionFactory;
     }
+
     @Bean(name = "RedisTemplate")
     public RedisTemplate<Object, Object> initRedisTemplate() {
         RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();

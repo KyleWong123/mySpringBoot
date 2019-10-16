@@ -25,7 +25,7 @@ public class RedisController {
      * @return
      */
     @GetMapping("/teststring")
-    public Map<String, Object> testStringAndHash(){
+    public Map<String, Object> testStringAndHash() {
         log.info("redis存储String类型测试");
         redisTemplate.opsForValue().set("stringTest", "您好");
         //redisTemplate.opsForValue().set("int_key", "1");
@@ -61,7 +61,7 @@ public class RedisController {
      * @return
      */
     @GetMapping("/testlist")
-    public Map<String, Object> testList(){
+    public Map<String, Object> testList() {
         log.info("redis存储list链表操作");
         log.info("从指定list链表的头部开始插入多个value");
         redisTemplate.opsForList().leftPushAll("list1", "1", "2", "3");
@@ -69,15 +69,15 @@ public class RedisController {
         redisTemplate.opsForList().rightPushAll("list2", "a", "b", "c", "d");
         log.info("获取键值为list1的值");
         List<String> list = redisTemplate.opsForList().range("list1", 0, 10);
-        for (String value:list
-             ) {
+        for (String value : list
+        ) {
             log.info(value);
         }
         log.info("绑定list链表的key值，方便操作");
         BoundListOperations boundListOperations = redisTemplate.boundListOps("list1");
         log.info("从指定key的链表的头部随机取出一个值");
         value = boundListOperations.leftPop();
-        log.info("本次取出的值为{}"+value);
+        log.info("本次取出的值为{}" + value);
         Map<String, Object> map = new HashMap<>(2);
         map.put("success", true);
         return map;
@@ -88,7 +88,7 @@ public class RedisController {
      * @return
      */
     @GetMapping("/testset")
-    public Map<String, Object> testSet(){
+    public Map<String, Object> testSet() {
         log.info("在redis数据库中插入set类型，set中没有重复元素");
         redisTemplate.opsForSet().add("set1", "a", "a", "b", "c", "d");
         redisTemplate.opsForSet().add("set2", "1", "2", "3", "4");
@@ -108,7 +108,7 @@ public class RedisController {
      * @return
      */
     @GetMapping("/testzset")
-    public Map<String, Object> testZset(){
+    public Map<String, Object> testZset() {
         log.info("redis的有序集合zset测试");
         log.info("向score集合中添加单个元素以及对应的score");
         redisTemplate.opsForZSet().add("score", "王帆", 0.5);
@@ -119,7 +119,7 @@ public class RedisController {
     }
 
     @GetMapping("/testmulti")
-    public Map<String, Object> testMulti(){
+    public Map<String, Object> testMulti() {
         log.info("在redis数据库中添加key1键和value1值");
         redisTemplate.opsForValue().set("key1", "1");
         redisTemplate.execute(new SessionCallback() {
@@ -150,7 +150,7 @@ public class RedisController {
     }
 
     @PostMapping("/testsubandpub")
-    public Map<String, Object> testSubAndPub(@RequestParam(value = "channel") String channel, @RequestParam(value = "message") String message){
+    public Map<String, Object> testSubAndPub(@RequestParam(value = "channel") String channel, @RequestParam(value = "message") String message) {
         log.info("向{}频道发布{}消息", channel, message);
         redisTemplate.convertAndSend(channel, message);
         Map<String, Object> map = new HashMap<>(2);

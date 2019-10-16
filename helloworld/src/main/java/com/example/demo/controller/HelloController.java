@@ -10,9 +10,10 @@ public class HelloController {
     private String name;
     @Value("${com.smart.age}")
     private int age;
+
     @RequestMapping("/")
     public String index() {
 
-        return "Hello Spring Boot"+name+age;
+        return "Hello Spring Boot" + name + age;
     }
 }

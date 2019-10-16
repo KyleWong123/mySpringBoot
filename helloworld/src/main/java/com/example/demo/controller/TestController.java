@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @Autowired
     private TestEntity testEntity;
+
     @GetMapping("/test")
-    public String testInfo(){
-        return testEntity.getNumber()+":"+testEntity.getUuid().replaceAll("\\-","")+":"+testEntity.getMax();
+    public String testInfo() {
+        return testEntity.getNumber() + ":" + testEntity.getUuid().replaceAll("\\-", "") + ":" + testEntity.getMax();
     }
 }

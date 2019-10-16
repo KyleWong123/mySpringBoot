@@ -11,9 +11,11 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+
 @Slf4j
 public class Send {
     private static final String QUEUE_NAME = "test_simple_name";
+
     public static void main(String[] args) throws IOException, TimeoutException {
         // 获取连接
         log.info("连接rabbitmq服务器");

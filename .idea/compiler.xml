@@ -6,22 +6,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-config-mybatis" />
+        <module name="test" />
         <module name="helloworld" />
         <module name="spring-boot-config-jpa" />
+        <module name="annotation" />
+        <module name="spring-boot-config-rabbitmq" />
+        <module name="spring-boot-config-redis" />
+        <module name="rabbitmq-demo" />
+        <module name="spring-boot-config-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="helloworld" target="1.8" />
-      <module name="spring-boot-config-jpa" target="1.8" />
-      <module name="spring-boot-config-mybatis" target="1.8" />
+      <module name="annotation (1)" target="1.8" />
+      <module name="annotation (2)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="annotation" options="-parameters" />
+      <module name="annotation (1)" options="-parameters" />
+      <module name="annotation (2)" options="-parameters" />
       <module name="helloworld" options="-parameters" />
+      <module name="rabbitmq-demo" options="-parameters" />
       <module name="spring-boot-config-jpa" options="-parameters" />
       <module name="spring-boot-config-mybatis" options="-parameters" />
+      <module name="spring-boot-config-rabbitmq" options="-parameters" />
+      <module name="spring-boot-config-redis" options="-parameters" />
+      <module name="test" options="" />
     </option>
   </component>
 </project>
